@@ -13,12 +13,12 @@
     /* NAV */
     .hero { background: #1C2B3A; color: #F7F3EE; position: relative; overflow: hidden; padding: 2rem 5vw 6rem; }
     nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
-    .logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: .08em; color: #F7F3EE; text-decoration: none; }
+    .logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: .08em; color: #F7F3EE; text-decoration: none; cursor: pointer; }
     .logo span { color: #B87333; }
     .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .nav-links a { color: #8A9BAE; font-family: 'Oswald', sans-serif; font-size: .85rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; transition: color .2s; }
+    .nav-links a { color: #8A9BAE; font-family: 'Oswald', sans-serif; font-size: .85rem; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; transition: color .2s; cursor: pointer; }
     .nav-links a:hover { color: #B87333; }
-    .nav-cta { background: #B87333; color: #F7F3EE; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; padding: .55rem 1.3rem; border: none; cursor: pointer; transition: background .2s; text-decoration: none; }
+    .nav-cta { background: #B87333; color: #F7F3EE; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; padding: .55rem 1.3rem; border: none; cursor: pointer; transition: background .2s; text-decoration: none; display: inline-block; }
     .nav-cta:hover { background: #a06628; }
 
     /* HERO */
@@ -48,11 +48,13 @@
 
     /* SERVICES */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #D4CFC8; margin-top: 2rem; }
-    .service-card { background: #F7F3EE; padding: 2rem 1.75rem; transition: background .2s; }
+    .service-card { background: #F7F3EE; padding: 2rem 1.75rem; transition: background .2s; cursor: pointer; }
     .service-card:hover { background: #EDE8E0; }
+    .service-card:hover h3 { color: #B87333; }
     .service-icon { width: 42px; height: 42px; margin-bottom: 1rem; color: #B87333; }
-    .service-card h3 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; color: #1C2B3A; margin-bottom: .6rem; }
+    .service-card h3 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; color: #1C2B3A; margin-bottom: .6rem; transition: color .2s; }
     .service-card p { font-size: .9rem; line-height: 1.65; color: #5A6A78; font-weight: 300; }
+    .service-card .learn-more { font-family: 'Oswald', sans-serif; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: #B87333; margin-top: .75rem; display: inline-block; }
 
     /* WHY */
     .why-section { background: #1C2B3A; color: #F7F3EE; padding: 5rem 5vw; }
@@ -83,12 +85,43 @@
 
     /* FOOTER */
     footer { background: #1C2B3A; padding: 2.5rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
-    .footer-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.15rem; color: #F7F3EE; letter-spacing: .08em; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.15rem; color: #F7F3EE; letter-spacing: .08em; cursor: pointer; }
     .footer-logo span { color: #B87333; }
     .footer-copy { font-size: .8rem; color: #8A9BAE; font-family: 'Oswald', sans-serif; letter-spacing: .07em; margin-top: .3rem; }
     .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { color: #8A9BAE; font-size: .8rem; font-family: 'Oswald', sans-serif; letter-spacing: .08em; text-decoration: none; transition: color .2s; }
+    .footer-links a { color: #8A9BAE; font-size: .8rem; font-family: 'Oswald', sans-serif; letter-spacing: .08em; text-decoration: none; transition: color .2s; cursor: pointer; }
     .footer-links a:hover { color: #B87333; }
+
+    /* MODAL OVERLAY */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(28,43,58,.85); z-index: 1000; overflow-y: auto; padding: 2rem 1rem; }
+    .modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal { background: #F7F3EE; max-width: 680px; width: 100%; position: relative; padding: 3rem 2.5rem; margin: auto; }
+    .modal-close { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: #8A9BAE; cursor: pointer; letter-spacing: .05em; }
+    .modal-close:hover { color: #B87333; }
+    .modal-label { font-family: 'Oswald', sans-serif; font-size: .75rem; letter-spacing: .25em; text-transform: uppercase; color: #B87333; margin-bottom: .6rem; }
+    .modal h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.9rem; text-transform: uppercase; letter-spacing: .02em; color: #1C2B3A; margin-bottom: 1.5rem; line-height: 1.1; }
+    .modal p { font-size: .95rem; line-height: 1.75; color: #2E3D4F; margin-bottom: 1rem; font-weight: 300; }
+    .modal ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .modal ul li { font-size: .95rem; line-height: 1.75; color: #2E3D4F; font-weight: 300; margin-bottom: .4rem; }
+
+    /* QUOTE FORM */
+    .quote-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .quote-form input, .quote-form select, .quote-form textarea { padding: .8rem 1rem; border: 1.5px solid #D4CFC8; background: #fff; color: #1C2B3A; font-family: 'Source Serif 4', serif; font-size: .95rem; outline: none; width: 100%; }
+    .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: #B87333; }
+    .quote-form textarea { min-height: 100px; resize: vertical; }
+    .quote-form button { background: #B87333; color: #F7F3EE; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; padding: .9rem; border: none; cursor: pointer; transition: background .2s; }
+    .quote-form button:hover { background: #a06628; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .success-msg { display: none; background: #2E3D4F; color: #F7F3EE; padding: 1.25rem 1.5rem; font-family: 'Oswald', sans-serif; font-size: .95rem; letter-spacing: .05em; margin-top: 1rem; }
+
+    /* JOBS */
+    .job-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .job-card { border: 1.5px solid #D4CFC8; padding: 1.25rem 1.5rem; background: #fff; }
+    .job-card h4 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: .07em; color: #1C2B3A; margin-bottom: .3rem; }
+    .job-meta { font-family: 'Oswald', sans-serif; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: #B87333; margin-bottom: .6rem; }
+    .job-card p { font-size: .9rem; line-height: 1.6; color: #5A6A78; font-weight: 300; margin-bottom: .75rem; }
+    .job-apply { background: #1C2B3A; color: #F7F3EE; font-family: 'Oswald', sans-serif; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .5rem 1.1rem; border: none; cursor: pointer; transition: background .2s; }
+    .job-apply:hover { background: #B87333; }
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
@@ -98,6 +131,8 @@
       .stat-item:last-child { border-bottom: none; }
       .cta-form input { width: 100%; }
       footer { flex-direction: column; align-items: flex-start; }
+      .form-row { grid-template-columns: 1fr; }
+      .modal { padding: 2rem 1.25rem; }
     }
   </style>
 </head>
@@ -106,22 +141,22 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <nav>
-      <a class="logo" href="#home">PEAK<span>RIDGE</span> ROOFING</a>
+      <a class="logo" onclick="scrollToTop()">PEAK<span>RIDGE</span> ROOFING</a>
       <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#why">About</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a onclick="scrollTo('services')">Services</a>
+        <a onclick="scrollTo('why')">About</a>
+        <a onclick="scrollTo('testimonials')">Reviews</a>
+        <a onclick="scrollTo('contact')">Contact</a>
       </div>
-      <a class="nav-cta" href="#contact">Free Estimate</a>
+      <a class="nav-cta" onclick="openModal('quoteModal')">Free Estimate</a>
     </nav>
     <div class="hero-content">
       <div class="eyebrow">Licensed &amp; Insured · Serving Ontario Since 2001</div>
       <h1>Your roof.<br><em>Done right.</em><br>The first time.</h1>
       <p class="hero-sub">From storm damage repairs to full replacements, PeakRidge brings 20+ years of precision craftsmanship to every job — no shortcuts, no subcontractors.</p>
       <div class="hero-btns">
-        <a class="btn-primary" href="#contact">Get a free quote</a>
-        <a class="btn-outline" href="#services">See our services →</a>
+        <button class="btn-primary" onclick="openModal('quoteModal')">Get a free quote</button>
+        <button class="btn-outline" onclick="scrollTo('services')">See our services →</button>
       </div>
     </div>
     <svg class="roofline-svg" viewBox="0 0 800 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,39 +186,37 @@
     <div class="section-label">What we do</div>
     <h2>Roofing services<br>built to last</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('serviceReplacement')">
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polyline points="4,28 20,12 36,28"/>
-          <rect x="10" y="28" width="20" height="10" rx="0"/>
+          <polyline points="4,28 20,12 36,28"/><rect x="10" y="28" width="20" height="10" rx="0"/>
         </svg>
         <h3>Full Replacement</h3>
         <p>Tear-off and new installation with premium shingles, underlayment, and ice &amp; water shield.</p>
+        <span class="learn-more">Learn more →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('serviceRepairs')">
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polyline points="4,28 20,12 36,28"/>
-          <line x1="14" y1="22" x2="22" y2="30"/>
-          <circle cx="22" cy="30" r="4"/>
+          <polyline points="4,28 20,12 36,28"/><line x1="14" y1="22" x2="22" y2="30"/><circle cx="22" cy="30" r="4"/>
         </svg>
         <h3>Repairs &amp; Patching</h3>
         <p>Same-week service for leaks, missing shingles, flashing failures, and storm damage.</p>
+        <span class="learn-more">Learn more →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('serviceFlat')">
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M8 32 L20 10 L32 32"/>
-          <path d="M12 32 L28 32"/>
-          <path d="M16 22 Q20 18 24 22"/>
+          <path d="M8 32 L20 10 L32 32"/><path d="M12 32 L28 32"/><path d="M16 22 Q20 18 24 22"/>
         </svg>
         <h3>Flat &amp; Low-Slope</h3>
         <p>TPO, EPDM, and modified bitumen systems for commercial and residential flat roofs.</p>
+        <span class="learn-more">Learn more →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('serviceGutters')">
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="6" y="28" width="28" height="6" rx="0"/>
-          <path d="M12 28 L12 18 Q12 14 16 12 L24 12 Q28 14 28 18 L28 28"/>
+          <rect x="6" y="28" width="28" height="6" rx="0"/><path d="M12 28 L12 18 Q12 14 16 12 L24 12 Q28 14 28 18 L28 28"/>
         </svg>
         <h3>Gutters &amp; Drainage</h3>
         <p>Seamless aluminum gutters, guards, and downspout extensions to protect your foundation.</p>
+        <span class="learn-more">Learn more →</span>
       </div>
     </div>
   </section>
@@ -193,22 +226,10 @@
     <div class="section-label">Why PeakRidge</div>
     <h2>The standard others<br>don't bother with</h2>
     <div class="reasons">
-      <div class="reason">
-        <h4>No day-labour crews</h4>
-        <p>Every person on your roof is a trained PeakRidge employee — not a last-minute sub brought in to hit a deadline.</p>
-      </div>
-      <div class="reason">
-        <h4>Manufacturer warranty</h4>
-        <p>We're certified installers for GAF and Owens Corning, so your warranty is real — not voided by poor workmanship.</p>
-      </div>
-      <div class="reason">
-        <h4>Clean site, always</h4>
-        <p>Magnetic sweep, tarped landscaping, and a full debris haul before we leave. Your yard looks better than when we arrived.</p>
-      </div>
-      <div class="reason">
-        <h4>Transparent pricing</h4>
-        <p>Detailed written quotes before work begins. No change orders slipped in at the end. The price we quote is the price you pay.</p>
-      </div>
+      <div class="reason"><h4>No day-labour crews</h4><p>Every person on your roof is a trained PeakRidge employee — not a last-minute sub brought in to hit a deadline.</p></div>
+      <div class="reason"><h4>Manufacturer warranty</h4><p>We're certified installers for GAF and Owens Corning, so your warranty is real — not voided by poor workmanship.</p></div>
+      <div class="reason"><h4>Clean site, always</h4><p>Magnetic sweep, tarped landscaping, and a full debris haul before we leave. Your yard looks better than when we arrived.</p></div>
+      <div class="reason"><h4>Transparent pricing</h4><p>Detailed written quotes before work begins. No change orders slipped in at the end. The price we quote is the price you pay.</p></div>
     </div>
   </section>
 
@@ -217,18 +238,9 @@
     <div class="section-label">From homeowners</div>
     <h2>What our customers say</h2>
     <div class="testimonials">
-      <div class="tcard">
-        <blockquote>"After two other contractors gave us vague estimates and never followed up, PeakRidge had a written quote in our hands within 48 hours. The job was done in a single day."</blockquote>
-        <cite>— Karen M., Brampton</cite>
-      </div>
-      <div class="tcard">
-        <blockquote>"Storm took out half our roof on a Friday night. They had a crew out Saturday morning, tarped everything, and replaced it fully by Monday. Honestly incredible response."</blockquote>
-        <cite>— David T., Mississauga</cite>
-      </div>
-      <div class="tcard">
-        <blockquote>"The crew was on time, cleaned up every nail, and the finished roof looks better than the original. Five years later, not a single issue."</blockquote>
-        <cite>— Sandra L., Oakville</cite>
-      </div>
+      <div class="tcard"><blockquote>"After two other contractors gave us vague estimates and never followed up, PeakRidge had a written quote in our hands within 48 hours. The job was done in a single day."</blockquote><cite>— Karen M., Brampton</cite></div>
+      <div class="tcard"><blockquote>"Storm took out half our roof on a Friday night. They had a crew out Saturday morning, tarped everything, and replaced it fully by Monday. Honestly incredible response."</blockquote><cite>— David T., Mississauga</cite></div>
+      <div class="tcard"><blockquote>"The crew was on time, cleaned up every nail, and the finished roof looks better than the original. Five years later, not a single issue."</blockquote><cite>— Sandra L., Oakville</cite></div>
     </div>
   </section>
 
@@ -239,25 +251,308 @@
       <p>No pressure. We'll assess your roof and tell you exactly what it needs.</p>
     </div>
     <div class="cta-form">
-      <input type="text" placeholder="Your name" aria-label="Your name" />
-      <input type="tel" placeholder="Phone number" aria-label="Phone number" />
-      <button type="button">Book now →</button>
+      <input type="text" id="ctaName" placeholder="Your name" aria-label="Your name" />
+      <input type="tel" id="ctaPhone" placeholder="Phone number" aria-label="Phone number" />
+      <button type="button" onclick="submitCta()">Book now →</button>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div>
-      <div class="footer-logo">PEAK<span>RIDGE</span> ROOFING</div>
+      <div class="footer-logo" onclick="scrollToTop()">PEAK<span>RIDGE</span> ROOFING</div>
       <div class="footer-copy">© 2026 · Brampton, Ontario · (905) 555-0184</div>
     </div>
     <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Careers</a>
-      <a href="#">WSIB &amp; Insurance</a>
+      <a onclick="openModal('privacyModal')">Privacy</a>
+      <a onclick="openModal('termsModal')">Terms</a>
+      <a onclick="openModal('careersModal')">Careers</a>
+      <a onclick="openModal('wsibModal')">WSIB &amp; Insurance</a>
     </div>
   </footer>
+
+  <!-- ===================== MODALS ===================== -->
+
+  <!-- QUOTE MODAL -->
+  <div class="modal-overlay" id="quoteModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('quoteModal')">✕ Close</button>
+      <div class="modal-label">Free Estimate</div>
+      <h2>Request a quote</h2>
+      <p>Fill out the form below and a PeakRidge estimator will contact you within one business day — no obligation, no pressure.</p>
+      <div class="quote-form">
+        <div class="form-row">
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
+        </div>
+        <input type="tel" placeholder="Phone number" />
+        <input type="email" placeholder="Email address" />
+        <input type="text" placeholder="Property address" />
+        <select>
+          <option value="" disabled selected>Service needed</option>
+          <option>Full Roof Replacement</option>
+          <option>Repairs &amp; Patching</option>
+          <option>Flat / Low-Slope Roof</option>
+          <option>Gutters &amp; Drainage</option>
+          <option>Not sure — need an inspection</option>
+        </select>
+        <textarea placeholder="Anything else we should know? (optional)"></textarea>
+        <button type="button" onclick="submitQuote()">Submit request →</button>
+      </div>
+      <div class="success-msg" id="quoteSuccess">✓ &nbsp;Thanks! We'll be in touch within one business day.</div>
+    </div>
+  </div>
+
+  <!-- SERVICE: FULL REPLACEMENT -->
+  <div class="modal-overlay" id="serviceReplacement">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('serviceReplacement')">✕ Close</button>
+      <div class="modal-label">Our Services</div>
+      <h2>Full Roof Replacement</h2>
+      <p>When repairs are no longer cost-effective, a full replacement is the smartest long-term investment you can make in your home. PeakRidge handles every step — from tear-off to final inspection.</p>
+      <p><strong>What's included:</strong></p>
+      <ul>
+        <li>Complete tear-off and disposal of existing materials</li>
+        <li>Deck inspection and repair of any damaged sheathing</li>
+        <li>Ice &amp; water shield along eaves, valleys, and penetrations</li>
+        <li>Synthetic underlayment across the full deck</li>
+        <li>GAF or Owens Corning architectural shingles (your choice)</li>
+        <li>New flashing at all transitions, walls, and chimneys</li>
+        <li>Ridge cap and proper attic ventilation assessment</li>
+        <li>Full magnetic sweep and debris removal</li>
+      </ul>
+      <p>Typical residential replacement is completed in one day. Written warranty on labour plus manufacturer warranty on materials.</p>
+      <br/>
+      <button class="btn-primary" onclick="closeModal('serviceReplacement'); openModal('quoteModal')">Get a quote for this service →</button>
+    </div>
+  </div>
+
+  <!-- SERVICE: REPAIRS -->
+  <div class="modal-overlay" id="serviceRepairs">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('serviceRepairs')">✕ Close</button>
+      <div class="modal-label">Our Services</div>
+      <h2>Repairs &amp; Patching</h2>
+      <p>Not every roof problem requires a full replacement. PeakRidge offers fast, targeted repairs to stop damage in its tracks — often within the same week you call.</p>
+      <p><strong>Common repairs we handle:</strong></p>
+      <ul>
+        <li>Active leaks and interior water intrusion</li>
+        <li>Missing, cracked, or curling shingles</li>
+        <li>Failed or lifted flashing at chimneys and skylights</li>
+        <li>Storm and hail damage (insurance claims supported)</li>
+        <li>Flat roof membrane splits and blisters</li>
+        <li>Gutter detachment and fascia rot</li>
+      </ul>
+      <p>We provide a written assessment before any work begins so you know exactly what you're paying for.</p>
+      <br/>
+      <button class="btn-primary" onclick="closeModal('serviceRepairs'); openModal('quoteModal')">Book a repair assessment →</button>
+    </div>
+  </div>
+
+  <!-- SERVICE: FLAT -->
+  <div class="modal-overlay" id="serviceFlat">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('serviceFlat')">✕ Close</button>
+      <div class="modal-label">Our Services</div>
+      <h2>Flat &amp; Low-Slope Roofing</h2>
+      <p>Flat and low-slope roofs demand specialized systems and installers who understand drainage, membrane integrity, and long-term performance. PeakRidge is certified in all major flat roofing systems.</p>
+      <p><strong>Systems we install:</strong></p>
+      <ul>
+        <li><strong>TPO (Thermoplastic Polyolefin)</strong> — energy-efficient, heat-welded seams, excellent for commercial applications</li>
+        <li><strong>EPDM (Rubber Roofing)</strong> — durable, low-maintenance, ideal for residential flat roofs</li>
+        <li><strong>Modified Bitumen</strong> — multi-layer system offering superior puncture and weather resistance</li>
+      </ul>
+      <p>All flat roof installations include a full drainage review and internal drain or scupper assessment.</p>
+      <br/>
+      <button class="btn-primary" onclick="closeModal('serviceFlat'); openModal('quoteModal')">Get a flat roof quote →</button>
+    </div>
+  </div>
+
+  <!-- SERVICE: GUTTERS -->
+  <div class="modal-overlay" id="serviceGutters">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('serviceGutters')">✕ Close</button>
+      <div class="modal-label">Our Services</div>
+      <h2>Gutters &amp; Drainage</h2>
+      <p>A properly functioning gutter system protects your foundation, siding, and landscaping from water damage. PeakRidge installs and services seamless aluminum gutters across the GTA.</p>
+      <p><strong>Our gutter services:</strong></p>
+      <ul>
+        <li>Seamless aluminum gutters (custom-formed on site)</li>
+        <li>Leaf guards and mesh gutter protection systems</li>
+        <li>Downspout extensions and underground drainage connections</li>
+        <li>Fascia board replacement and gutter re-hang</li>
+        <li>Spring and fall gutter cleaning packages</li>
+      </ul>
+      <p>Available in standard white, brown, black, and custom colour-matched to your home's trim.</p>
+      <br/>
+      <button class="btn-primary" onclick="closeModal('serviceGutters'); openModal('quoteModal')">Get a gutter quote →</button>
+    </div>
+  </div>
+
+  <!-- CAREERS MODAL -->
+  <div class="modal-overlay" id="careersModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('careersModal')">✕ Close</button>
+      <div class="modal-label">Join Our Team</div>
+      <h2>Careers at PeakRidge</h2>
+      <p>We're always looking for skilled tradespeople and motivated individuals who take pride in their work. PeakRidge offers competitive pay, year-round work, and a crew culture built on respect.</p>
+      <div class="job-list">
+        <div class="job-card">
+          <h4>Journeyman Roofer</h4>
+          <div class="job-meta">Full-time · Brampton, ON · $28–$38/hr</div>
+          <p>3+ years residential/commercial roofing experience required. Proficiency with shingle, flat, and flashing systems. Valid driver's license an asset.</p>
+          <button class="job-apply" onclick="applyJob('Journeyman Roofer')">Apply for this role →</button>
+        </div>
+        <div class="job-card">
+          <h4>Roofing Apprentice</h4>
+          <div class="job-meta">Full-time · Brampton, ON · $19–$24/hr</div>
+          <p>No experience necessary — we'll train the right person. Must be comfortable with heights, physical work, and early starts. Willingness to pursue RAIC certification preferred.</p>
+          <button class="job-apply" onclick="applyJob('Roofing Apprentice')">Apply for this role →</button>
+        </div>
+        <div class="job-card">
+          <h4>Estimator / Project Coordinator</h4>
+          <div class="job-meta">Full-time · Brampton, ON · $55,000–$70,000/yr</div>
+          <p>Experience in roofing or construction estimation required. Proficiency with measurement software (EagleView, Hover) an asset. Strong client communication skills essential.</p>
+          <button class="job-apply" onclick="applyJob('Estimator / Project Coordinator')">Apply for this role →</button>
+        </div>
+        <div class="job-card">
+          <h4>Gutter Installer</h4>
+          <div class="job-meta">Full-time / Seasonal · Brampton, ON · $22–$30/hr</div>
+          <p>Experience with seamless gutter machines preferred. Must be comfortable on ladders and working at heights. Valid G license required.</p>
+          <button class="job-apply" onclick="applyJob('Gutter Installer')">Apply for this role →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY MODAL -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('privacyModal')">✕ Close</button>
+      <div class="modal-label">Legal</div>
+      <h2>Privacy Policy</h2>
+      <p>PeakRidge Roofing ("we," "us," or "our") is committed to protecting your personal information. This policy outlines how we collect, use, and safeguard data submitted through this website.</p>
+      <p><strong>What we collect:</strong> Name, phone number, email address, and property address when you submit a quote request or contact form.</p>
+      <p><strong>How we use it:</strong> Solely to respond to your inquiry, schedule estimates, and provide the services you've requested. We do not sell or share your information with third parties for marketing purposes.</p>
+      <p><strong>Data retention:</strong> We retain customer records for up to seven years for warranty and service history purposes. Quote inquiries that do not proceed to a job are deleted after 12 months.</p>
+      <p><strong>Your rights:</strong> You may request access to, correction of, or deletion of your personal data at any time by contacting us at privacy@peakridgeroofing.ca.</p>
+      <p><strong>Cookies:</strong> This website does not use tracking cookies or third-party analytics.</p>
+      <p>This policy was last updated June 2026. For questions, contact us at (905) 555-0184.</p>
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('termsModal')">✕ Close</button>
+      <div class="modal-label">Legal</div>
+      <h2>Terms of Service</h2>
+      <p>By using this website or engaging PeakRidge Roofing for services, you agree to the following terms.</p>
+      <p><strong>Estimates:</strong> All written estimates are valid for 30 days from the date of issue. Prices are subject to change based on material cost fluctuations after that period.</p>
+      <p><strong>Scheduling:</strong> Project dates are confirmed in writing. PeakRidge reserves the right to reschedule due to weather conditions that pose a safety risk. Clients will be notified with at least 24 hours' notice where possible.</p>
+      <p><strong>Payment:</strong> A deposit of 25–40% is required to secure your project date. The remaining balance is due upon completion and client walkthrough. We accept e-transfer, cheque, and major credit cards.</p>
+      <p><strong>Warranty:</strong> Labour warranty terms are outlined in your signed contract. Material warranties are governed by the respective manufacturer (GAF, Owens Corning). Warranties are void if damage results from acts of God, unauthorized modifications, or failure to maintain gutters and drainage.</p>
+      <p><strong>Liability:</strong> PeakRidge Roofing carries $5M commercial general liability insurance and is registered with WSIB Ontario. Certificates available upon request.</p>
+      <p>Last updated June 2026.</p>
+    </div>
+  </div>
+
+  <!-- WSIB MODAL -->
+  <div class="modal-overlay" id="wsibModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('wsibModal')">✕ Close</button>
+      <div class="modal-label">Compliance</div>
+      <h2>WSIB &amp; Insurance</h2>
+      <p>PeakRidge Roofing is fully registered with the Workplace Safety and Insurance Board (WSIB) of Ontario and carries comprehensive commercial insurance. Hiring an uninsured contractor puts you at legal and financial risk — we make it easy to verify our standing.</p>
+      <p><strong>Our coverage includes:</strong></p>
+      <ul>
+        <li>WSIB Ontario — Account #: 1284756-18 (clearance available on request)</li>
+        <li>Commercial General Liability — $5,000,000 per occurrence</li>
+        <li>Contractor's Equipment &amp; Tools Insurance</li>
+        <li>Commercial Auto Insurance — all company vehicles</li>
+      </ul>
+      <p><strong>Certificates of Insurance</strong> and WSIB clearance letters are available at no charge — simply request them when booking your estimate and we'll email them within one business day.</p>
+      <p>All PeakRidge field employees hold valid Working at Heights certification as required by the Ontario Ministry of Labour.</p>
+      <br/>
+      <button class="btn-primary" onclick="closeModal('wsibModal'); openModal('quoteModal')">Request certificates with your estimate →</button>
+    </div>
+  </div>
+
+  <!-- JOB APPLICATION MODAL -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('applyModal')">✕ Close</button>
+      <div class="modal-label">Careers</div>
+      <h2 id="applyTitle">Apply</h2>
+      <p>Send us your details and we'll be in touch within 3 business days.</p>
+      <div class="quote-form">
+        <div class="form-row">
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
+        </div>
+        <input type="tel" placeholder="Phone number" />
+        <input type="email" placeholder="Email address" />
+        <textarea placeholder="Tell us a bit about your experience"></textarea>
+        <button type="button" onclick="submitApplication()">Submit application →</button>
+      </div>
+      <div class="success-msg" id="applySuccess">✓ &nbsp;Application received! We'll be in touch within 3 business days.</div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    // Close on backdrop click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) closeModal(this.id);
+      });
+    });
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+      }
+    });
+    function scrollTo(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function submitQuote() {
+      document.getElementById('quoteSuccess').style.display = 'block';
+      document.querySelector('#quoteModal .quote-form button').disabled = true;
+      document.querySelector('#quoteModal .quote-form button').textContent = 'Submitted ✓';
+    }
+    function submitCta() {
+      const name = document.getElementById('ctaName').value.trim();
+      const phone = document.getElementById('ctaPhone').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      openModal('quoteModal');
+    }
+    function applyJob(role) {
+      document.getElementById('applyTitle').textContent = 'Apply — ' + role;
+      document.getElementById('applySuccess').style.display = 'none';
+      const btn = document.querySelector('#applyModal .quote-form button');
+      if (btn) { btn.disabled = false; btn.textContent = 'Submit application →'; }
+      closeModal('careersModal');
+      openModal('applyModal');
+    }
+    function submitApplication() {
+      document.getElementById('applySuccess').style.display = 'block';
+      const btn = document.querySelector('#applyModal .quote-form button');
+      btn.disabled = true;
+      btn.textContent = 'Submitted ✓';
+    }
+  </script>
 
 </body>
 </html>
